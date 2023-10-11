@@ -41,7 +41,7 @@ def add_url(user_id:str, url:str):
   add_user(str(user_id))
   data = load(USERS_FILE)
   # data[str(user_id)].append(url['keyword'])
-  data[str(user_id)][url['keyword']].append({
+  data[str(user_id)][url['url']['keyword']].append({
     "long_url": url['url']['url'],
     "date": url['url']['date'],
     "title": url['title'],
