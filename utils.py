@@ -32,7 +32,11 @@ def add_user(user_id:str):
   if str(user_id) not in data:
     data[str(user_id)] = {}
     dump(USERS_FILE, data)
-    
+
+def get_urls(user_id:str):
+  data = load(USERS_FILE)
+  return data[str(user_id)]
+
 def add_url(user_id:str, url:str):
   add_user(str(user_id))
   data = load(USERS_FILE)

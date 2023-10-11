@@ -56,7 +56,10 @@ def cancel(update: Update, context: CallbackContext) -> int:
 
 
 def my_urls(update: Update, context: CallbackContext) -> int:
-  
+  keyboard =  [[
+            InlineKeyboardButton(url, callback_data=url) for url in get_urls(update.message.chat.id)
+    ]]
+  update.message.reply_text("URL larim", reply_markup=InlineKeyboardMarkup(keyboard))
   pass
   # update.message.reply_text(get_mes('my_urls'))
   # return MENU
