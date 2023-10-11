@@ -38,15 +38,16 @@ def get_urls(user_id:str):
   return data[str(user_id)]
 
 def add_url(user_id:str, url:str):
-  add_user(str(user_id))
+  add_user(user_id)
   data = load(USERS_FILE)
-  # data[str(user_id)].append(url['keyword'])
-  data[str(user_id)][url['url']['keyword']].append({
-    "long_url": url['url']['url'],
-    "date": url['url']['date'],
-    "title": url['title'],
-    "shorturl": url['shorturl']
-  })
+  url_data = {
+      "keyword": url['url']['keyword'],
+      "long_url": url['url']['url'],
+      "date": url['url']['date'],
+      "title": url['title'],
+      "shorturl": url['shorturl']
+  }
+  data[str(user_id)].append(url_data)
   dump(USERS_FILE, data)
 
 def check_url(url):
