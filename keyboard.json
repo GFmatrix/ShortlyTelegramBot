@@ -1,0 +1,12 @@
+{
+  "menu_keyboard":[
+    "🔗 Kichik URL yasash",
+    "🖇️ Mening URL larim", 
+    "📊 URL statistikasini ko'rish", 
+    "❓ Yordam"
+  ],
+  "create_URL":[
+    "URL ga shaxsiy nom berish"
+  ],
+  "cancel":"❌ Bekor qilish"
+}
